@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>900</width><height>640</height></rect>
+  </property>
+  <property name="minimumSize">
+   <size><width>900</width><height>640</height></size>
+  </property>
+  <property name="windowTitle">
+   <string>SONARA — Playlist Manager</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #1a1a2e;</string>
+  </property>
+
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #1a1a2e;</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing"><number>0</number></property>
+    <property name="leftMargin"><number>0</number></property>
+    <property name="topMargin"><number>0</number></property>
+    <property name="rightMargin"><number>0</number></property>
+    <property name="bottomMargin"><number>0</number></property>
+
+    <!-- PANEL KIRI -->
+    <item>
+     <widget class="QWidget" name="panelKiri" native="true">
+      <property name="minimumSize"><size><width>340</width><height>0</height></size></property>
+      <property name="maximumSize"><size><width>340</width><height>16777215</height></size></property>
+      <property name="styleSheet">
+       <string notr="true">QWidget { background-color: #16213e; border-right: 1px solid #1e4d7b; }</string>
+      </property>
+
+      <!-- Judul -->
+      <widget class="QLabel" name="labelTitle">
+       <property name="geometry"><rect><x>20</x><y>18</y><width>280</width><height>45</height></rect></property>
+       <property name="font"><font><family>Impact</family><pointsize>28</pointsize></font></property>
+       <property name="styleSheet">
+        <string notr="true">color: #00ff87; background: transparent; border: none; letter-spacing: 3px;</string>
+       </property>
+       <property name="text"><string>SONARA</string></property>
+      </widget>
+
+      <!-- Subtitle -->
+      <widget class="QLabel" name="labelSubtitle">
+       <property name="geometry"><rect><x>22</x><y>60</y><width>250</width><height>18</height></rect></property>
+       <property name="styleSheet">
+        <string notr="true">color: #a0a0b0; font-size: 10px; background: transparent; border: none; letter-spacing: 2px;</string>
+       </property>
+       <property name="text"><string>PLAYLIST MANAGER</string></property>
+      </widget>
+
+      <!-- Garis Header -->
+      <widget class="QFrame" name="lineHeader">
+       <property name="geometry"><rect><x>20</x><y>84</y><width>300</width><height>2</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: #00c85d; border: none;</string></property>
+       <property name="frameShape"><enum>QFrame::Shape::HLine</enum></property>
+      </widget>
+
+      <!-- CARD FORM INPUT -->
+      <widget class="QFrame" name="frame">
+       <property name="geometry"><rect><x>15</x><y>96</y><width>310</width><height>245</height></rect></property>
+       <property name="styleSheet">
+        <string notr="true">QFrame { background-color: #0f3460; border-radius: 12px; border: 1px solid #1e4d7b; }</string>
+       </property>
+       <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+       <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+
+       <widget class="QLabel" name="labelFormTitle">
+        <property name="geometry"><rect><x>15</x><y>10</y><width>200</width><height>22</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">color: #00c85d; font-size: 10px; font-weight: bold; letter-spacing: 2px; background: transparent; border: none;</string>
+        </property>
+        <property name="text"><string>+ TAMBAH LAGU</string></property>
+       </widget>
+
+       <!-- Judul Lagu -->
+       <widget class="QLabel" name="labelInputJudul">
+        <property name="geometry"><rect><x>15</x><y>38</y><width>130</width><height>16</height></rect></property>
+        <property name="styleSheet"><string notr="true">color: #a0a0b0; font-size: 10px; background: transparent; border: none;</string></property>
+        <property name="text"><string>JUDUL LAGU</string></property>
+       </widget>
+       <widget class="QLineEdit" name="inputJudul">
+        <property name="geometry"><rect><x>15</x><y>56</y><width>130</width><height>32</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit { background-color: #0a1930; color: #ffffff; border: 1px solid #1e4d7b; border-radius: 8px; padding: 4px 12px; font-size: 11px; } QLineEdit:focus { border: 1px solid #00c85d; }</string>
+        </property>
+        <property name="placeholderText"><string>Judul lagu...</string></property>
+       </widget>
+
+       <!-- Penyanyi -->
+       <widget class="QLabel" name="labelInputPenyanyi">
+        <property name="geometry"><rect><x>160</x><y>38</y><width>130</width><height>16</height></rect></property>
+        <property name="styleSheet"><string notr="true">color: #a0a0b0; font-size: 10px; background: transparent; border: none;</string></property>
+        <property name="text"><string>PENYANYI</string></property>
+       </widget>
+       <widget class="QLineEdit" name="inputPenyanyi">
+        <property name="geometry"><rect><x>160</x><y>56</y><width>135</width><height>32</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit { background-color: #0a1930; color: #ffffff; border: 1px solid #1e4d7b; border-radius: 8px; padding: 4px 12px; font-size: 11px; } QLineEdit:focus { border: 1px solid #00c85d; }</string>
+        </property>
+        <property name="placeholderText"><string>Nama penyanyi...</string></property>
+       </widget>
+
+       <!-- Durasi -->
+       <widget class="QLabel" name="labelInputDurasi">
+        <property name="geometry"><rect><x>15</x><y>98</y><width>130</width><height>16</height></rect></property>
+        <property name="styleSheet"><string notr="true">color: #a0a0b0; font-size: 10px; background: transparent; border: none;</string></property>
+        <property name="text"><string>DURASI</string></property>
+       </widget>
+       <widget class="QLineEdit" name="inputDurasi">
+        <property name="geometry"><rect><x>15</x><y>116</y><width>130</width><height>32</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit { background-color: #0a1930; color: #ffffff; border: 1px solid #1e4d7b; border-radius: 8px; padding: 4px 12px; font-size: 11px; } QLineEdit:focus { border: 1px solid #00c85d; }</string>
+        </property>
+        <property name="placeholderText"><string>00:00</string></property>
+       </widget>
+
+       <!-- Genre -->
+       <widget class="QLabel" name="labelInputGenre">
+        <property name="geometry"><rect><x>160</x><y>98</y><width>130</width><height>16</height></rect></property>
+        <property name="styleSheet"><string notr="true">color: #a0a0b0; font-size: 10px; background: transparent; border: none;</string></property>
+        <property name="text"><string>GENRE</string></property>
+       </widget>
+       <widget class="QLineEdit" name="inputGenre">
+        <property name="geometry"><rect><x>160</x><y>116</y><width>135</width><height>32</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit { background-color: #0a1930; color: #ffffff; border: 1px solid #1e4d7b; border-radius: 8px; padding: 4px 12px; font-size: 11px; } QLineEdit:focus { border: 1px solid #00c85d; }</string>
+        </property>
+        <property name="placeholderText"><string>Genre musik...</string></property>
+       </widget>
+
+       <!-- Tombol Insert -->
+       <widget class="QPushButton" name="btnInsertLagu">
+        <property name="geometry"><rect><x>15</x><y>165</y><width>280</width><height>42</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #00c85d; color: #000000; border-radius: 10px; font-size: 12px; font-weight: bold; letter-spacing: 2px; border: none; } QPushButton:hover { background-color: #00ff87; } QPushButton:pressed { background-color: #009944; }</string>
+        </property>
+        <property name="text"><string>+ INSERT LAGU</string></property>
+       </widget>
+      </widget>
+      <!-- END CARD FORM INPUT -->
+
+      <!-- CARD KONTROL -->
+      <widget class="QFrame" name="frame_2">
+       <property name="geometry"><rect><x>15</x><y>352</y><width>310</width><height>250</height></rect></property>
+       <property name="styleSheet">
+        <string notr="true">QFrame { background-color: #0f3460; border-radius: 12px; border: 1px solid #1e4d7b; }</string>
+       </property>
+       <property name="frameShape"><enum>QFrame::Shape::StyledPanel</enum></property>
+       <property name="frameShadow"><enum>QFrame::Shadow::Raised</enum></property>
+
+       <widget class="QLabel" name="labelKontrolTitle">
+        <property name="geometry"><rect><x>15</x><y>10</y><width>200</width><height>22</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">color: #00c85d; font-size: 10px; font-weight: bold; letter-spacing: 2px; background: transparent; border: none;</string>
+        </property>
+        <property name="text"><string>KONTROL</string></property>
+       </widget>
+
+       <!-- Search -->
+       <widget class="QLineEdit" name="inputSearch">
+        <property name="geometry"><rect><x>15</x><y>40</y><width>240</width><height>34</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit { background-color: #0a1930; color: #ffffff; border: 1px solid #1e4d7b; border-radius: 10px; padding: 4px 14px; font-size: 11px; } QLineEdit:focus { border: 1px solid #00c85d; }</string>
+        </property>
+        <property name="placeholderText"><string>Cari lagu...</string></property>
+       </widget>
+       <widget class="QPushButton" name="btnSearch">
+        <property name="geometry"><rect><x>260</x><y>40</y><width>34</width><height>34</height></rect></property>
+        <property name="minimumSize"><size><width>34</width><height>34</height></size></property>
+        <property name="maximumSize"><size><width>34</width><height>34</height></size></property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #ffd60a; color: #000; border-radius: 10px; font-size: 11px; font-weight: bold; border: none; } QPushButton:hover { background-color: #00ff87; } QPushButton:pressed { background-color: #e6c000; }</string>
+        </property>
+        <property name="text"><string>Go</string></property>
+       </widget>
+
+       <!-- Sort -->
+       <widget class="QComboBox" name="comboSort">
+        <property name="geometry"><rect><x>15</x><y>86</y><width>185</width><height>34</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox { background-color: #0a1930; color: #ffffff; border: 1px solid #1e4d7b; border-radius: 10px; padding: 4px 14px; font-size: 11px; } QComboBox:focus { border: 1px solid #00c85d; } QComboBox::drop-down { border: none; width: 20px; } QComboBox QAbstractItemView { background-color: #0f3460; color: #ffffff; selection-background-color: #009944; border: 1px solid #1e4d7b; }</string>
+        </property>
+        <item><property name="text"><string>Judul (A-Z)</string></property></item>
+        <item><property name="text"><string>Penyanyi</string></property></item>
+        <item><property name="text"><string>Genre</string></property></item>
+       </widget>
+       <!-- Tombol Sort -->
+       <widget class="QPushButton" name="btnSort">
+        <property name="geometry"><rect><x>208</x><y>86</y><width>86</width><height>34</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #0a1930; color: #ffd60a; border-radius: 10px; font-size: 11px; font-weight: bold; border: 1px solid #ffd60a; } QPushButton:hover { background-color: #ffd60a; color: #000; } QPushButton:pressed { background-color: #e6c000; }</string>
+        </property>
+        <property name="text"><string>SORT</string></property>
+       </widget>
+
+       <!-- Tombol Display -->
+       <widget class="QPushButton" name="btnDisplay">
+        <property name="geometry"><rect><x>15</x><y>132</y><width>279</width><height>34</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #0a1930; color: #00ff87; border-radius: 10px; font-size: 11px; font-weight: bold; letter-spacing: 1px; border: 1px solid #00c85d; } QPushButton:hover { background-color: #00c85d; color: #000; } QPushButton:pressed { background-color: #009944; }</string>
+        </property>
+        <property name="text"><string>DISPLAY SEMUA LAGU</string></property>
+       </widget>
+
+       <!-- Tombol Delete -->
+       <widget class="QPushButton" name="btnDeleteGlobal">
+        <property name="geometry"><rect><x>15</x><y>178</y><width>279</width><height>34</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: #e63946; color: white; border-radius: 10px; font-size: 11px; font-weight: bold; letter-spacing: 1px; border: none; } QPushButton:hover { background-color: #ff6b6b; } QPushButton:pressed { background-color: #c1121f; }</string>
+        </property>
+        <property name="text"><string>DELETE LAGU DIPILIH</string></property>
+       </widget>
+
+       <!-- Previous & Next -->
+       <widget class="QPushButton" name="btnPrevious">
+        <property name="geometry"><rect><x>15</x><y>222</y><width>130</width><height>18</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: transparent; color: #ffd60a; border-radius: 8px; font-size: 10px; font-weight: bold; border: 1px solid #ffd60a; } QPushButton:hover { background-color: #ffd60a; color: #000; }</string>
+        </property>
+        <property name="text"><string>&lt; PREVIOUS</string></property>
+       </widget>
+       <widget class="QPushButton" name="btnNext">
+        <property name="geometry"><rect><x>163</x><y>222</y><width>131</width><height>18</height></rect></property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: transparent; color: #ffd60a; border-radius: 8px; font-size: 10px; font-weight: bold; border: 1px solid #ffd60a; } QPushButton:hover { background-color: #ffd60a; color: #000; }</string>
+        </property>
+        <property name="text"><string>NEXT &gt;</string></property>
+       </widget>
+      </widget>
+      <!-- END CARD KONTROL -->
+
+      <!-- Widget tersembunyi -->
+      <widget class="QLabel" name="labelPauseIcon">
+       <property name="geometry"><rect><x>0</x><y>0</y><width>0</width><height>0</height></rect></property>
+       <property name="text"><string/></property>
+      </widget>
+      <widget class="QLabel" name="labelLogoSonara">
+       <property name="geometry"><rect><x>0</x><y>0</y><width>0</width><height>0</height></rect></property>
+       <property name="text"><string/></property>
+      </widget>
+     </widget>
+    </item>
+    <!-- END PANEL KIRI -->
+
+    <!-- PANEL KANAN -->
+    <item>
+     <widget class="QWidget" name="panelKanan" native="true">
+      <property name="styleSheet"><string notr="true">background-color: #1a1a2e;</string></property>
+
+      <widget class="QLabel" name="labelPlaylistHeader">
+       <property name="geometry"><rect><x>20</x><y>18</y><width>400</width><height>28</height></rect></property>
+       <property name="styleSheet">
+        <string notr="true">color: #ffffff; font-size: 14px; font-weight: bold; letter-spacing: 2px; background: transparent;</string>
+       </property>
+       <property name="text"><string>DAFTAR PLAYLIST</string></property>
+      </widget>
+
+      <widget class="QLabel" name="labelPlaylistSub">
+       <property name="geometry"><rect><x>22</x><y>46</y><width>400</width><height>16</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: #a0a0b0; font-size: 10px; background: transparent;</string></property>
+       <property name="text"><string>Kelola lagu favoritmu di sini</string></property>
+      </widget>
+
+      <widget class="QFrame" name="lineRight">
+       <property name="geometry"><rect><x>20</x><y>66</y><width>520</width><height>2</height></rect></property>
+       <property name="styleSheet"><string notr="true">background-color: #1e4d7b; border: none;</string></property>
+       <property name="frameShape"><enum>QFrame::Shape::HLine</enum></property>
+      </widget>
+
+      <!-- Tabel -->
+      <widget class="QTableWidget" name="tablePlaylist">
+       <property name="geometry"><rect><x>15</x><y>78</y><width>535</width><height>470</height></rect></property>
+       <property name="styleSheet">
+        <string notr="true">QTableWidget { background-color: #112240; color: #ffffff; border: 1px solid #1e4d7b; border-radius: 10px; gridline-color: #1e4d7b; font-size: 11px; outline: none; } QTableWidget::item { padding: 6px 8px; border-bottom: 1px solid #1e4d7b; } QTableWidget::item:selected { background-color: #009944; color: white; } QTableWidget::item:alternate { background-color: #0a1930; } QHeaderView::section { background-color: #0d2137; color: #00c85d; font-size: 10px; font-weight: bold; letter-spacing: 1px; padding: 8px 6px; border: none; border-bottom: 2px solid #00c85d; border-right: 1px solid #1e4d7b; } QScrollBar:vertical { background: #0d2137; width: 8px; border-radius: 4px; } QScrollBar::handle:vertical { background: #009944; border-radius: 4px; }</string>
+       </property>
+       <property name="alternatingRowColors"><bool>true</bool></property>
+       <property name="selectionBehavior"><enum>QAbstractItemView::SelectionBehavior::SelectRows</enum></property>
+       <property name="showGrid"><bool>true</bool></property>
+       <column><property name="text"><string>No</string></property></column>
+       <column><property name="text"><string>Judul</string></property></column>
+       <column><property name="text"><string>Penyanyi</string></property></column>
+       <column><property name="text"><string>Durasi</string></property></column>
+       <column><property name="text"><string>Genre</string></property></column>
+       <column><property name="text"><string>Aksi</string></property></column>
+      </widget>
+
+      <!-- Tagline -->
+      <widget class="QLabel" name="labelTagline">
+       <property name="geometry"><rect><x>15</x><y>556</y><width>535</width><height>30</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: #00ff87; font-size: 13px; font-weight: bold; letter-spacing: 3px; background: transparent;</string></property>
+       <property name="text"><string>NIKMATI MUSIKMU</string></property>
+       <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+      </widget>
+      <widget class="QLabel" name="labelSubTagline">
+       <property name="geometry"><rect><x>15</x><y>585</y><width>535</width><height>18</height></rect></property>
+       <property name="styleSheet"><string notr="true">color: #a0a0b0; font-size: 10px; background: transparent;</string></property>
+       <property name="text"><string>Anggap aja Spotify woilah cik</string></property>
+       <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+      </widget>
+
+      <widget class="QLabel" name="labelImageHeadphone">
+       <property name="geometry"><rect><x>0</x><y>0</y><width>0</width><height>0</height></rect></property>
+       <property name="text"><string/></property>
+      </widget>
+     </widget>
+    </item>
+    <!-- END PANEL KANAN -->
+
+   </layout>
+  </widget>
+
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry"><rect><x>0</x><y>0</y><width>900</width><height>30</height></rect></property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar { background-color: #16213e; color: #a0a0b0; border-bottom: 1px solid #1e4d7b; font-size: 11px; } QMenuBar::item:selected { background-color: #0f3460; color: #00c85d; }</string>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">QStatusBar { background-color: #16213e; color: #a0a0b0; font-size: 10px; border-top: 1px solid #1e4d7b; }</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
